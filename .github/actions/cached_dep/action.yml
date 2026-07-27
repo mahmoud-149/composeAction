@@ -5,7 +5,10 @@ inputs:
     description: this is for the dep to this action
     required: false
     default: 'true'
-
+outputs:
+  cached-dep:
+    description: "this for getting the dep as output"
+    value: ${{steps.install}}
 runs:
   using: "composite"
   steps:
@@ -18,5 +21,8 @@ runs:
       key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
   - name: Install dependencies
     if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
-    run: npm ci
+    id: install
+    run:  |
+     npm ci
+     echo "cache=${inputs.caching}" >> $GITHUB_OUTPUT
     shell: bash

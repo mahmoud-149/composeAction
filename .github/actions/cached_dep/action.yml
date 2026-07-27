@@ -8,7 +8,7 @@ inputs:
 outputs:
   cached-dep:
     description: "this for getting the dep as output"
-    value: ${{steps.install}}
+    value: ${{steps.install.outputs.cachee}}
 runs:
   using: "composite"
   steps:
@@ -24,5 +24,5 @@ runs:
     id: install
     run:  |
      npm ci
-     echo "cache=${inputs.caching}" >> $GITHUB_OUTPUT
+     echo "cachee=${{inputs.caching}}" >> $GITHUB_OUTPUT
     shell: bash

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build main.js -o dist"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
     "@actions/core": "^3.0.1",
     "@actions/exec": "^3.0.0",
     "@actions/github": "^9.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
   }
 }

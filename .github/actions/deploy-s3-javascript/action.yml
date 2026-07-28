@@ -1,5 +1,5 @@
 name: 'deploy to aws '
 description: 'this for deploy a s3 in aws'
 runs:
-  using: "node16"
+  using: "node24"
   main: 'main.js'

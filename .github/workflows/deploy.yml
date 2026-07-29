@@ -84,6 +84,9 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       
+      - name: Install custom action deps
+        run: cd .github/actions/deploy-s3-javascript && npm ci
+
       - name: run custom js
         uses: ./.github/actions/deploy-s3-javascript    
         #      \.github\actions\deploy-s3-javascript\action.yml

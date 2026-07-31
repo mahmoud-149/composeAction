@@ -85,7 +85,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 
         with:
-          bucket: github-actiontry
-          bucket_region: us-east-1
+          bucket: 'github-actiontry'
+          bucket_region: 'us-east-1'
           dist-folder: ./dist  
   

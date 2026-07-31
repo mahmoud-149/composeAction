@@ -76,6 +76,8 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
+      - name: Install custom action deps
+        run: cd .github/actions/deploy-s3-javascript && npm ci  
       - name: Deploy site
         uses: ./.github/actions/deploy-s3-javascript
         env:

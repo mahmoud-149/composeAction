@@ -2,7 +2,7 @@ name: 'deploy to aws '
 description: 'this for deploy a s3 in aws'
 inputs:
   bucket:
-    description: 'this is the bucker name'
+    description: 'this is the bucket name'
     required: true
   bucket_region:
     description: 'this is to choose the region'

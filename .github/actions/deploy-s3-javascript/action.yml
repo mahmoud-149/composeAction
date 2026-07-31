@@ -1,5 +1,17 @@
 name: 'deploy to aws '
 description: 'this for deploy a s3 in aws'
+inputs:
+  bucket:
+    description: 'this is the bucker name'
+    required: true
+  bucket_region:
+    description: 'this is to choose the region'
+    required: false
+    default: 'us-east-1' 
+  dist-folder:
+    description: 'the folder containing the deploy file'
+    required: true
+
 runs:
   using: "node24"
   main: 'main.js'
